@@ -5,7 +5,7 @@ def introspection_info(obj):
     # Получаем тип объекта
     obj_type = type(obj).__name__
     # Получаем модуль, к которому принадлежит объект
-    obj_module = obj.__module__
+    obj_module = getattr(obj, '__module__', 'Built-in')
     # Получаем список всех атрибутов и методов объекта
     obj_attrs = dir(obj)
 
